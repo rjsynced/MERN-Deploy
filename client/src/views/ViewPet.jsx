@@ -10,7 +10,7 @@ const ViewPet = () => {
     // const [likes, setLikes] = useState();
 
     useEffect( () => {
-        axios.get(`http://127.0.0.1:8000/api/pets/${id}`)
+        axios.get(`http://localhost:8000/api/pets/${id}`)
             .then(res => setPets(res.data))
             .catch((err) => console.log(err)
     )}, [id])
@@ -27,7 +27,7 @@ const ViewPet = () => {
         const req = {_id: e.target.name, 
             likes: e.target.value
         }  
-        axios.put(`http://127.0.0.1:8000/api/pets/${id}/edit`, req)
+        axios.put(`http://localhost:8000/api/pets/${id}/edit`, req)
             .then(res => setPets(res.data))
             .catch((err) => console.log(err)
     )}

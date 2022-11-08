@@ -8,7 +8,7 @@ const Main = () => {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/pets')
+        axios.get('http://localhost:8000/api/pets')
             .then(res => {
                 setPets(res.data);
                 setLoaded(true);
@@ -22,7 +22,7 @@ const Main = () => {
 
     const createPet = (pet) => {
         axios
-            .post('http://127.0.0.1:8000/api/pets', pet)
+            .post('http://localhost:8000/api/pets', pet)
             .then(
                 console.log(pet),
                 setPets(pets => [...pets, pet]),

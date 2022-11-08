@@ -13,7 +13,7 @@ const UpdatePet = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/pets/${id}`)
+        axios.get(`http://localhost:8000/api/pets/${id}`)
             .then((res) => {setPet(res.data) // returns you an object in an array so use [0] to grab the data
                 setLoaded(true)
             })
@@ -23,7 +23,7 @@ const UpdatePet = () => {
 
     const updatePet = (pet) => {
         axios
-            .put(`http://127.0.0.1:8000/api/pets/${id}/edit`, pet)
+            .put(`http://localhost:8000/api/pets/${id}/edit`, pet)
             .then((res) => {
                 navigate("/error");
             })

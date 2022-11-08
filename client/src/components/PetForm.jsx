@@ -20,7 +20,7 @@ const PetForm = (props) => {
     const navigate = useNavigate()
     useEffect(() => {
         if (id) {
-            axios.get(`http://127.0.0.1:8000/api/pets/${id}`)
+            axios.get(`http://localhost:8000/api/pets/${id}`)
                 .then(res => setValues(res.data))
                 .catch(err => console.log(err))
         }
@@ -39,7 +39,7 @@ const PetForm = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (!id) {
-            axios.post('http://127.0.0.1:8000/api/pets/new',
+            axios.post('http://localhost:8000/api/pets/new',
                 values
             )
                 .then(res => {
@@ -64,7 +64,7 @@ const PetForm = (props) => {
         }
         else if (id) {
             console.log('running');
-            axios.put(`http://127.0.0.1:8000/api/pets/${id}/edit`,
+            axios.put(`http://localhost:8000/api/pets/${id}/edit`,
                 values
             )
                 .then(res => {
